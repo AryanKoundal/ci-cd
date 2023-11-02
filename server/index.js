@@ -12,9 +12,13 @@ app.use(express.json());
 app.use("/admin", adminRouter)
 app.use("/user", userRouter)
 
+app.get("", (req, res) => {
+    const htmlContent = '<html><body><h1>Server Is Running</h1></body></html>';
+    res.status(200).send(htmlContent);
+})
 
-// Connect to MongoDB
-// DONT MISUSE THIS THANKYOU!!
-mongoose.connect('mongodb://localhost:27017/courses', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
+// uniform resource identifier
+var uri = "mongodb+srv://aryankoundal:lHKDAlmlT7KvRQP0@clustername-cluster0.cupcng4.mongodb.net/";
+mongoose.connect(uri, { useUnifiedTopology: true, dbName: "ci-cd" });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
