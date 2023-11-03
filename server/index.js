@@ -17,7 +17,7 @@ app.get("", (req, res) => {
     res.status(200).send(htmlContent);
 })
 
-// uniform resource identifier
+// uniform resource identifier 
 var uri = "mongodb+srv://aryankoundal:lHKDAlmlT7KvRQP0@clustername-cluster0.cupcng4.mongodb.net/";
 mongoose.connect(uri, { useUnifiedTopology: true, dbName: "ci-cd-aws" });
 
