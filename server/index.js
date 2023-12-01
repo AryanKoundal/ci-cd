@@ -13,7 +13,7 @@ app.use("/admin", adminRouter)
 app.use("/user", userRouter)
 
 app.get("", (req, res) => {
-    const htmlContent = '<html><body><h1>Hello World by Changed Owner</h1></body></html>';
+    const htmlContent = '<html><body><h1>Hello World</h1></body></html>';
     res.status(200).send(htmlContent);
 })
 
