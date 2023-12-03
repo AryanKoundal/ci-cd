@@ -3,6 +3,11 @@ const { authenticateJwt, SECRET } = require("../middleware/auth");
 const { User, Course, Admin } = require("../db");
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  const htmlContent = '<html><body><h1>Hello World From User!</h1></body></html>';
+  res.status(200).send(htmlContent);
+});
+
   router.post('/signup', async (req, res) => {
     const { username, password } = req.body;
     const user = await User.findOne({ username });

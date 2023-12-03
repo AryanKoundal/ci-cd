@@ -7,6 +7,12 @@ const { authenticateJwt } = require("../middleware/auth");
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  const htmlContent = '<html><body><h1>Hello World From Amin!</h1></body></html>';
+  res.status(200).send(htmlContent);
+});
+
+
 router.get("/me", authenticateJwt, async (req, res) => {
     const admin = await Admin.findOne({ username: req.user.username });
     if (!admin) {
